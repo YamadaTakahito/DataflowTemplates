@@ -147,7 +147,7 @@ public class TextIOToBigQuery {
                         }))
                 .to(options.getOutputTable())
                 .withCreateDisposition(CreateDisposition.CREATE_IF_NEEDED)
-                .withWriteDisposition(WriteDisposition.WRITE_APPEND)
+                .withWriteDisposition(WriteDisposition.WRITE_TRUNCATE)
                 .withCustomGcsTempLocation(options.getBigQueryLoadingTemporaryDirectory()));
 
     pipeline.run();
